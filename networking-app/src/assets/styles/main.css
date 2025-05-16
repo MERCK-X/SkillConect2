@@ -1,0 +1,407 @@
+@import './variables.css';
+
+/* Reset y estilos base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--gray-100);
+  color: var(--gray-900);
+  line-height: 1.6;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header */
+.header {
+  background-color: var(--white);
+  box-shadow: var(--shadow-sm);
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  color: var(--primary);
+  font-size: 1.2rem;
+}
+
+.logo img {
+  height: 30px;
+}
+
+.main-nav {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-link {
+  color: var(--gray-700);
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.nav-link:hover {
+  color: var(--primary);
+}
+
+/* Layout principal */
+.main-content {
+  padding: 30px 0;
+}
+
+.layout-grid {
+  display: grid;
+  grid-template-columns: 250px 1fr 250px;
+  gap: 30px;
+}
+
+.left-column, .right-column {
+  position: sticky;
+  top: 80px;
+  height: fit-content;
+}
+
+/* Tarjetas de perfil y publicaciones */
+.profile-card, .post-card, .suggestion-card {
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-sm);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.profile-avatar, .post-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Estilos para botones */
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--primary);
+  border: 1px solid var(--primary);
+  padding: 10px 15px;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-outline:hover {
+  background-color: var(--primary-light);
+  color: white;
+}
+
+/* Footer */
+footer {
+  background-color: var(--gray-900);
+  color: var(--gray-300);
+  padding: 30px 0;
+  text-align: center;
+}
+
+/* Página de búsqueda */
+.search-layout {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 30px;
+}
+
+.filter-sidebar {
+  background-color: var(--white);
+  padding: 20px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-sm);
+}
+
+.search-results {
+  background-color: var(--white);
+  padding: 20px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-sm);
+}
+
+.result-card {
+  display: flex;
+  gap: 15px;
+  padding: 15px;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.result-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .layout-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .left-column, .right-column {
+    position: static;
+  }
+  
+  .search-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Estilos generales para formularios */
+.min-h-screen {
+  min-height: 100vh;
+}
+
+.bg-gray-100 {
+  background-color: #f8f9fa;
+}
+
+.bg-white {
+  background-color: #ffffff;
+}
+
+.shadow-md {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+
+/* Colores */
+.text-purple-600 {
+  color: #6e3b9c;
+}
+
+.bg-purple-600 {
+  background-color: #6e3b9c;
+}
+
+.hover\:bg-purple-700:hover {
+  background-color: #5a2d7d;
+}
+
+.focus\:ring-purple-600:focus {
+  box-shadow: 0 0 0 2px #6e3b9c;
+}
+
+/* Transiciones */
+.transition-colors {
+  transition-property: background-color, border-color, color;
+  transition-duration: 0.15s;
+}
+
+/* Espaciados */
+.p-8 {
+  padding: 2rem;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.max-w-md {
+  max-width: 28rem;
+}
+
+.mb-8 {
+  margin-bottom: 2rem;
+}
+
+.space-y-6 > * + * {
+  margin-top: 1.5rem;
+}
+
+/* Inputs */
+.border-gray-300 {
+  border-color: #dee2e6;
+}
+
+.focus\:outline-none:focus {
+  outline: none;
+}
+
+.focus\:ring-2:focus {
+  box-shadow: 0 0 0 2px rgba(110, 59, 156, 0.5);
+}
+
+/* Textos */
+.text-3xl {
+  font-size: 1.875rem;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.text-gray-900 {
+  color: #212529;
+}
+
+.text-gray-600 {
+  color: #6c757d;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+/* Flexbox */
+.flex {
+  display: flex;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+  background-color: #f8f9fa;
+  color: #212529;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Contenedor principal */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Suggestion Card */
+.suggestion-card {
+  background-color: white;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.suggestion-card:hover {
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transform: translateY(-2px);
+}
+
+.suggestion-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.suggestion-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.suggestion-info {
+  flex: 1;
+}
+
+.suggestion-name {
+  font-weight: 600;
+  color: #212529;
+  margin-bottom: 2px;
+}
+
+.suggestion-role {
+  font-size: 0.875rem;
+  color: #6c757d;
+}
+
+.suggestion-common {
+  font-size: 0.75rem;
+  color: #6e3b9c;
+  margin-top: 4px;
+}
+
+.suggestion-btn {
+  width: 100%;
+  padding: 6px;
+  margin-top: 10px;
+  background-color: #f3e5f5;
+  color: #6e3b9c;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.suggestion-btn:hover {
+  background-color: #e1bee7;
+}
